@@ -1,4 +1,5 @@
 # TODO: Make a gem from this code.
+# TODO: Install the minitest-reporters gem.
 
 require "rake/testtask"
 

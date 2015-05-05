@@ -2,8 +2,8 @@ require "erb"
 
 class Configurator
   LIB_PATH = File.expand_path(File.dirname(File.dirname(__FILE__)))
-  TEMPLATE_PATH = File.join(LIB_PATH, "templates")
-  CONFIGURATION_PATH = ENV["HOME"]
+  TEMPLATE_PATH = File.join(LIB_PATH, "resources", "templates")
+  OUTPUT_PATH = ENV["HOME"]
 
   protected
 
@@ -12,6 +12,6 @@ class Configurator
   end
 
   def write_configuration(name, content)
-    File.write(File.join(CONFIGURATION_PATH, name), content)
+    File.write(File.join(OUTPUT_PATH, name), content)
   end
 end
