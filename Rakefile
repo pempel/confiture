@@ -3,8 +3,8 @@
 
 require "rake/testtask"
 
-require_relative "lib/configurators/git_configurator"
-require_relative "lib/configurators/zsh_configurator"
+require_relative "lib/git_configurator"
+require_relative "lib/zsh_configurator"
 
 Rake::TestTask.new(:spec) do |task|
   task.libs << "spec"
@@ -21,5 +21,5 @@ namespace :config do
   end
 end
 
-task :config => ["config:git", "config:zsh"]
-task :default => :config
+task config: ["config:git", "config:zsh"]
+task default: :config
