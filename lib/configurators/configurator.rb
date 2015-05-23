@@ -7,11 +7,11 @@ class Configurator
 
   protected
 
-  def parse_template(name)
-    ERB.new(File.read(File.join(TEMPLATE_PATH, "#{name}.erb"))).result(binding)
-  end
-
-  def write_configuration(name, content)
-    File.write(File.join(OUTPUT_PATH, name), content)
+  def write_configuration(options)
+    from = options.fetch(:from)
+    to = options.fetch(:to, ".#{from.gsub(/\.erb$/, '')}")
+    content = File.read(File.join(TEMPLATE_PATH, from))
+    content = ERB.new(content).result(binding) if File.extname(from) == ".erb"
+    File.write(File.join(OUTPUT_PATH, to), content)
   end
 end

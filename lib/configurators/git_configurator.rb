@@ -8,6 +8,7 @@ class GitConfigurator < Configurator
     print "Enter your email for git commits: "
     @email = $stdin.gets.chomp
 
-    write_configuration(".gitconfig", parse_template("gitconfig"))
+    write_configuration(from: "gitignore")
+    write_configuration(from: "gitconfig.erb")
   end
 end
