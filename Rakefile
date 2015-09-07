@@ -4,6 +4,7 @@
 require "rake/testtask"
 
 require_relative "lib/git_configurator"
+require_relative "lib/vim_configurator"
 require_relative "lib/zsh_configurator"
 
 Rake::TestTask.new(:spec) do |task|
@@ -16,10 +17,14 @@ namespace :config do
     GitConfigurator.new.config
   end
 
+  task :vim do
+    VimConfigurator.new.config
+  end
+
   task :zsh do
     ZshConfigurator.new.config
   end
 end
 
-task config: ["config:git", "config:zsh"]
+task config: ["config:git", "config:vim", "config:zsh"]
 task default: :config
