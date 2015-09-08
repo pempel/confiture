@@ -8,8 +8,6 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 source $ZSH/oh-my-zsh.sh
 
-eval `boot2docker shellinit 2>/dev/null`
-
 alias ls="ls -FGlAhp"
 alias ..="cd ../"
 alias .2="cd ../.."
