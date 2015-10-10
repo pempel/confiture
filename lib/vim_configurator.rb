@@ -17,7 +17,10 @@ class VimConfigurator < Configurator
 
     write_configuration(from: "vimrc")
 
-    puts "Installing vim plugins..."
+    puts "Cleaning unused vim plugins up..."
+    run "vim +PluginClean! +qall"
+
+    puts "Installing configured vim plugins..."
     run "vim +PluginInstall +qall"
   end
 

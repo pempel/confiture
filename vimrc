@@ -8,6 +8,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-rails'
+Plugin 'mxw/vim-jsx'
 
 call vundle#end()
 filetype plugin indent on
@@ -23,3 +24,5 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set backspace=2
+
+let g:jsx_ext_required = 0
