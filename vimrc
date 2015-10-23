@@ -28,3 +28,4 @@ set shiftwidth=2
 set backspace=2
 
 let g:jsx_ext_required = 0
+let g:netrw_liststyle = 3
